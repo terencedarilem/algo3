@@ -1,0 +1,34 @@
+ALGORITHM VerifierAnneeBissextile
+VAR
+    annee: entier
+BEGIN
+    Écrire "Entrez une année : "
+    Lire annee
+    SI (annee MOD 4 = 0 ET annee MOD 100 <> 0) OU annee MOD 400 = 0 ALORS
+        Écrire "L'année est bissextile"
+    SINON
+        Écrire "L'année n'est pas bissextile"
+    FIN SI
+END
+
+ALGORITHM FibonacciSequence
+VAR
+    n, resultat: entier
+
+    FUNCTION Fibonacci(n: entier): entier
+    BEGIN
+        SI n <= 0 ALORS
+            RETOURNER 0
+        SINON SI n = 1 ALORS
+            RETOURNER 1
+        SINON
+            RETOURNER Fibonacci(n-1) + Fibonacci(n-2)
+        FIN SI
+    END FUNCTION
+
+BEGIN
+    Écrire "Entrez un entier n pour obtenir le nième nombre de Fibonacci : "
+    Lire n
+    resultat <- Fibonacci(n)
+    Écrire "Le nième nombre de Fibonacci est : " + resultat
+END
